@@ -59,23 +59,6 @@ Operamos o **AS264212** como ISP regional e também como trânsito para provedor
 | **Peering** | Política aberta · [peering@impactotelecom.com](mailto:peering@impactotelecom.com) |
 | **NOC 24/7** | [noc@nexthop.solutions](mailto:noc@nexthop.solutions) |
 
-## Stack
-
-Sistemas internos de provisionamento, APIs, aplicativos e operação de rede:
-
-<p>
-  <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js">
-  <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React">
-  <img src="https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white" alt="PHP">
-  <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" alt="Linux">
-  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker">
-  <img src="https://img.shields.io/badge/Nginx-009639?style=for-the-badge&logo=nginx&logoColor=white" alt="Nginx">
-  <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL">
-  <img src="https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white" alt="Redis">
-  <img src="https://img.shields.io/badge/BGP-0759A5?style=for-the-badge&logo=cisco&logoColor=white" alt="BGP">
-  <img src="https://img.shields.io/badge/IPv6-70B748?style=for-the-badge&logo=internetcomputer&logoColor=white" alt="IPv6">
-</p>
-
 ## Gestão
 
 Esta organização no GitHub e a operação de rede da Impacto Telecom estão sob gestão da **[NextHop Solutions®](https://nexthop.solutions)** / **[Elizandro Pacheco](https://nexthop.solutions)**.
