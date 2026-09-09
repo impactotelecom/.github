@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raichu-uploads.s3.amazonaws.com/companypagedetail_c006ee37-7c6b-40bc-ac96-2eb796ad1bd9.png" alt="Impacto Telecom" width="480">
+  <img src="https://raw.githubusercontent.com/impactotelecom/.github/main/profile/logo.png" alt="Impacto Telecom" width="480">
 </p>
 
 <h1 align="center">Impacto Telecom</h1>
@@ -42,8 +42,6 @@
 
 A **Impacto Telecom** é um provedor regional de internet fibra óptica com sede em Atibaia, no interior de São Paulo. Atende residências, empresas e outros provedores da região com rede 100% fibra, Wi-Fi 6, suporte técnico local e operação 24/7.
 
-Mais de **26 mil clientes** já confiam na Impacto. A empresa é líder de banda larga fixa em Atibaia, com avaliação **4.9/5** no Google e internet premiada por **6 anos consecutivos**.
-
 > Site: [impactotelecom.com](https://impactotelecom.com)
 
 ## Rede
@@ -60,19 +58,6 @@ Operamos o **AS264212** como ISP regional e também como trânsito para provedor
 | **Looking Glass** | [lg.impactotelecom.com](http://lg.impactotelecom.com) |
 | **Peering** | Política aberta · [peering@impactotelecom.com](mailto:peering@impactotelecom.com) |
 | **NOC 24/7** | [noc@nexthop.solutions](mailto:noc@nexthop.solutions) |
-
-## Cobertura
-
-Fibra óptica em Atibaia e região:
-
-- Atibaia
-- Piracaia
-- Bom Jesus dos Perdões
-- Joanópolis
-- Mairiporã
-- Terra Preta
-
-Planos residenciais e empresariais de **300 Mb a 1 Gb**, com suporte técnico local e atendimento **0800 123 4040**.
 
 ## Stack
 
