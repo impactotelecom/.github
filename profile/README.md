@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/impactotelecom/.github/main/profile/logo.png" alt="Impacto Telecom" width="480">
+  <img src="profile/logo.png" alt="Impacto Telecom" width="480">
 </p>
 
 <h1 align="center">Impacto Telecom</h1>
