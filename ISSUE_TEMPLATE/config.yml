@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Pedir uma funcionalidade ou relatar um problema
+    url: https://helpdesk.impactotelecom.com
+    about: Pedidos de usuário entram pelo helpdesk (Solicitação de feature ou Relato de bug). A issue técnica nasce depois da triagem.

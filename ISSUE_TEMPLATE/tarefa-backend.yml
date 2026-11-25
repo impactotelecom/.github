@@ -1,0 +1,90 @@
+name: Tarefa de backend
+description: Recorte de backend de uma Especificação. Crie como sub-issue da Especificação no engineering.
+title: "[HD-] "
+type: Task
+labels: ["backend"]
+projects: ["impactotelecom/2"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        A **Especificação é a fonte da verdade**. Se algo aqui divergir dela, vale a Especificação; se ela estiver errada, é corrigida antes do código.
+        Depois de criar, ligue esta issue como **sub-issue** da Especificação. Se ela depende de outra tarefa, marque **blocked by**.
+        Dúvida que afete regra ou contrato: comente na Especificação e mova o Status para Refinamento.
+  - type: input
+    id: especificacao
+    attributes:
+      label: Especificação
+      placeholder: "impactotelecom/engineering#12"
+    validations:
+      required: true
+  - type: textarea
+    id: objetivo
+    attributes:
+      label: Objetivo desta tarefa
+      description: O recorte de backend da Especificação, em 2 ou 3 linhas.
+    validations:
+      required: true
+  - type: textarea
+    id: criterios
+    attributes:
+      label: Critérios de aceite cobertos
+      description: Copie o texto dos CA da Especificação que esta tarefa entrega, para que a issue se leia sozinha.
+      value: |
+        - [ ] **CA-01** —
+        - [ ] **CA-02** —
+    validations:
+      required: true
+  - type: textarea
+    id: regras
+    attributes:
+      label: Regras de negócio implementadas
+      value: |
+        - **RN-01** —
+  - type: textarea
+    id: contrato
+    attributes:
+      label: Contrato de API
+      description: Link para a seção "Contrato de API" da Especificação. Mudança de contrato atualiza a Especificação primeiro e é avisada na tarefa de frontend.
+  - type: textarea
+    id: checklist
+    attributes:
+      label: Checklist técnico
+      value: |
+        ### Dados e migrações
+        - [ ] Migração reversível, com a volta implementada e testada.
+        - [ ] Migração roda do zero num banco vazio, junto com todas as anteriores.
+        - [ ] Índice para toda coluna usada em filtro, ordenação ou junção.
+        - [ ] Restrições no banco (chave estrangeira, único, não nulo), não só na aplicação.
+        - [ ] Alteração em tabela grande planejada para não travar a produção.
+
+        ### Segurança
+        - [ ] Autenticação e autorização em todo endpoint novo ou alterado, verificadas por ação, não só por rota.
+        - [ ] Isolamento entre empresas: toda consulta filtrada pelo tenant; recurso de outra empresa responde 404.
+        - [ ] Toda entrada validada no servidor: tipo, tamanho, formato e lista de valores permitidos.
+        - [ ] Nenhuma consulta montada por concatenação de texto; nenhum campo aceito em massa sem lista explícita.
+        - [ ] Upload, se houver: tipo e tamanho validados, nome gerado pelo servidor, arquivo fora da pasta pública.
+        - [ ] Nenhum segredo, token ou senha no código ou no diff; variável nova no `.env.example` com valor fictício.
+        - [ ] Logs sem dado pessoal, senha ou token.
+
+        ### Desempenho e observabilidade
+        - [ ] Sem consulta N+1; listagens paginadas, com tamanho máximo de página.
+        - [ ] Trabalho demorado em fila, com novas tentativas e tempo limite.
+        - [ ] Erro de integração externa registrado com contexto e sem dado sensível; falha de job visível.
+
+        ### Testes obrigatórios
+        - [ ] Unitário de cada RN desta tarefa, incluindo os casos-limite.
+        - [ ] Integração de cada endpoint: sucesso, 401, 403, 404 e 422.
+        - [ ] Acesso cruzado: usuário da empresa A não lê nem altera dado da empresa B.
+        - [ ] Resposta confere com o contrato da Especificação (campos, tipos e códigos).
+        - [ ] Integrações testadas com o serviço externo simulado, sem chamada real na suíte.
+        - [ ] Suíte completa verde localmente e na CI.
+  - type: textarea
+    id: fora
+    attributes:
+      label: Fora do escopo desta tarefa
+  - type: textarea
+    id: notas
+    attributes:
+      label: Notas para o desenvolvedor
+      description: Pontos de atenção, código existente a reaproveitar, armadilhas conhecidas.

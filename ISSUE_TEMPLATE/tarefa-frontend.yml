@@ -1,0 +1,96 @@
+name: Tarefa de frontend
+description: Recorte de frontend de uma Especificação. Crie como sub-issue da Especificação no engineering.
+title: "[HD-] "
+type: Task
+labels: ["frontend"]
+projects: ["impactotelecom/2"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        A **Especificação é a fonte da verdade**. O front pode começar antes do back terminar, usando um mock que respeita o contrato de API da Especificação.
+        Depois de criar, ligue esta issue como **sub-issue** da Especificação. Se ela depende da tarefa de backend, marque **blocked by**.
+        Dúvida que afete regra, texto ou contrato: comente na Especificação e mova o Status para Refinamento.
+  - type: input
+    id: especificacao
+    attributes:
+      label: Especificação
+      placeholder: "impactotelecom/engineering#12"
+    validations:
+      required: true
+  - type: textarea
+    id: objetivo
+    attributes:
+      label: Objetivo desta tarefa
+      description: O recorte de frontend da Especificação, em 2 ou 3 linhas.
+    validations:
+      required: true
+  - type: textarea
+    id: criterios
+    attributes:
+      label: Critérios de aceite cobertos
+      description: Copie o texto dos CA da Especificação que esta tarefa entrega.
+      value: |
+        - [ ] **CA-01** —
+        - [ ] **CA-02** —
+    validations:
+      required: true
+  - type: textarea
+    id: telas
+    attributes:
+      label: Telas e fluxo
+      value: |
+        - **Protótipo ou capturas:**
+        - **Rotas novas ou alteradas:**
+        - **Como o usuário chega à tela (menu, botão, link):**
+  - type: textarea
+    id: contrato
+    attributes:
+      label: Contrato de API consumido
+      description: Link para a seção "Contrato de API" da Especificação.
+      value: |
+        - [ ] Enquanto o back não fica pronto, mock com os mesmos campos, tipos e códigos de erro do contrato.
+        - [ ] Tipos do cliente escritos ou gerados a partir do contrato.
+  - type: textarea
+    id: checklist
+    attributes:
+      label: Checklist técnico
+      value: |
+        ### Estados obrigatórios em cada tela
+        - [ ] Carregando, sem salto de layout.
+        - [ ] Vazio, com texto que orienta o próximo passo.
+        - [ ] Erro de rede ou de servidor, com opção de tentar de novo.
+        - [ ] Erro de validação (422) exibido no campo correspondente, com a mensagem do servidor.
+        - [ ] Sem permissão (403): ação oculta ou desabilitada, e a resposta 403 tratada se ocorrer.
+        - [ ] Sucesso, com confirmação visível.
+
+        ### Formulários e textos
+        - [ ] Validação no cliente espelha as regras do servidor (o servidor continua sendo a garantia).
+        - [ ] Botão de envio bloqueado durante a requisição, sem envio duplicado.
+        - [ ] Dados digitados preservados quando a requisição falha; ação destrutiva pede confirmação.
+        - [ ] Rótulos, mensagens e confirmações exatamente como na Especificação; datas, números e moeda em pt-BR.
+
+        ### Responsividade e acessibilidade
+        - [ ] Funciona em 360 px, 768 px e 1280 px, sem rolagem horizontal.
+        - [ ] Tudo operável por teclado, com foco visível e ordem lógica.
+        - [ ] Todo campo com rótulo associado; ícone sem texto tem nome acessível.
+        - [ ] Contraste mínimo de 4,5:1 para texto (WCAG 2.1 AA); modo escuro conferido, se houver.
+
+        ### Desempenho e segurança
+        - [ ] Sem requisição duplicada ou em cascata desnecessária; listas grandes paginadas ou virtualizadas.
+        - [ ] Nenhum segredo no código do cliente; nenhum token ou dado pessoal em `localStorage`.
+        - [ ] Conteúdo vindo do usuário nunca inserido como HTML sem sanitização.
+
+        ### Testes obrigatórios
+        - [ ] Teste de componente para cada estado listado acima.
+        - [ ] Integração da tela com a API simulada: sucesso, 422, 403 e erro de servidor.
+        - [ ] E2E do caminho principal de cada CA desta tarefa.
+        - [ ] Nenhum erro ou aviso no console do navegador.
+        - [ ] Suíte completa verde localmente e na CI.
+
+        ### Evidência no PR
+        - [ ] Capturas ou vídeo curto de cada estado, em desktop e em mobile.
+  - type: textarea
+    id: fora
+    attributes:
+      label: Fora do escopo desta tarefa

@@ -1,0 +1,92 @@
+name: Bug
+description: Bug reproduzido a partir de um relato do helpdesk. Primeiro o teste que falha, depois a correção.
+title: "[HD-] "
+type: Bug
+projects: ["impactotelecom/2"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Abra esta issue **depois de reproduzir** o relato, no repositório onde o erro está.
+        Título: `[HD-<número do chamado>] <sintoma em uma frase>`.
+
+        **Bug de segurança** (dado de uma empresa aparecendo para outra, acesso sem login, segredo exposto): não descreva o passo a passo de exploração aqui. Registre só o sintoma e trate os detalhes por canal restrito com o responsável técnico.
+
+        Se a correção exigir regra nova ou mudar um comportamento combinado, pare: vira Especificação no `engineering`.
+  - type: input
+    id: chamado
+    attributes:
+      label: Chamado no helpdesk
+      description: Protocolo e link do chamado de origem.
+      placeholder: "HD-1234 — https://helpdesk.impactotelecom.com/..."
+    validations:
+      required: true
+  - type: input
+    id: versao
+    attributes:
+      label: Versão em produção quando o bug foi visto
+      placeholder: "sha-1a2b3c4 ou tag da imagem"
+  - type: textarea
+    id: sintoma
+    attributes:
+      label: Sintoma
+      description: O que o usuário vê, em uma ou duas frases.
+    validations:
+      required: true
+  - type: textarea
+    id: esperado-obtido
+    attributes:
+      label: Esperado × obtido
+      value: |
+        - **Esperado:** <!-- cite a Especificação, o critério de aceite ou a regra -->
+        - **Obtido:**
+    validations:
+      required: true
+  - type: textarea
+    id: reproducao
+    attributes:
+      label: Reprodução mínima
+      description: Passos ou requisição exata que reproduzem o erro fora de produção. Sem token, senha ou dado pessoal real.
+      value: |
+        1.
+        2.
+    validations:
+      required: true
+  - type: checkboxes
+    id: escopo
+    attributes:
+      label: Escopo e impacto
+      options:
+        - label: Afeta todas as empresas (desmarcado = uma empresa só)
+        - label: Gerou dado errado, perdido ou duplicado no banco (descreva em "Dados a corrigir")
+        - label: Expôs dado de uma empresa para outra ou sem login (bug de segurança)
+  - type: textarea
+    id: causa
+    attributes:
+      label: Causa raiz
+      description: Preenchida por quem corrige. O que estava errado e por que os testes não pegaram.
+  - type: textarea
+    id: correcao
+    attributes:
+      label: Correção
+      description: O que muda e por que isso resolve a causa, não só o sintoma.
+  - type: textarea
+    id: dados
+    attributes:
+      label: Dados a corrigir
+      description: Script de correção revisado em PR próprio, com backup do recorte antes de rodar e conferência depois. Nunca UPDATE manual em produção.
+      value: |
+        - [ ] Não há dado a corrigir
+        - [ ] Script de correção em PR próprio, com backup e conferência
+  - type: textarea
+    id: dod
+    attributes:
+      label: Definition of Done do bug
+      value: |
+        - [ ] Teste automatizado que **falha sem a correção** e passa com ela (teste de regressão).
+        - [ ] Causa raiz registrada acima.
+        - [ ] Mesmo erro procurado em código parecido (outras rotas, outros serviços) e corrigido ou listado.
+        - [ ] Suíte completa, lint e checagem de tipos verdes na CI.
+        - [ ] Conferido em homologação com os passos da reprodução mínima.
+        - [ ] Publicado com imagem por commit e caminho de volta conhecido (tag anterior).
+        - [ ] Chamado atualizado com a macro correspondente.
