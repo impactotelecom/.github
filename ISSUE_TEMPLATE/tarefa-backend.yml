@@ -10,7 +10,7 @@ body:
       value: |
         A **Especificação é a fonte da verdade**. Se algo aqui divergir dela, vale a Especificação; se ela estiver errada, é corrigida antes do código.
         Depois de criar, ligue esta issue como **sub-issue** da Especificação. Se ela depende de outra tarefa, marque **blocked by**.
-        Dúvida que afete regra ou contrato: comente na Especificação e mova o Status para Refinamento.
+        Dúvida que afete regra ou contrato: comente na Especificação; a resposta vem como correção no texto dela.
   - type: input
     id: especificacao
     attributes:

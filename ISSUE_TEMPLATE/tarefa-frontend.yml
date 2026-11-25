@@ -10,7 +10,7 @@ body:
       value: |
         A **Especificação é a fonte da verdade**. O front pode começar antes do back terminar, usando um mock que respeita o contrato de API da Especificação.
         Depois de criar, ligue esta issue como **sub-issue** da Especificação. Se ela depende da tarefa de backend, marque **blocked by**.
-        Dúvida que afete regra, texto ou contrato: comente na Especificação e mova o Status para Refinamento.
+        Dúvida que afete regra, texto ou contrato: comente na Especificação; a resposta vem como correção no texto dela.
   - type: input
     id: especificacao
     attributes:
