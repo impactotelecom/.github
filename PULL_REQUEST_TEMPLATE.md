@@ -43,9 +43,9 @@ Back: exemplo de requisição e resposta, sem dado real e sem token. -->
 - [ ] Todo CA coberto por este PR tem teste automatizado que o comprova.
 - [ ] Suíte completa, lint e checagem de tipos passam localmente e na CI.
 - [ ] Contrato de API igual ao da Especificação, ou a Especificação foi atualizada antes.
-- [ ] Autorização e isolamento entre empresas testados em todo endpoint novo ou alterado.
+- [ ] Autorização testada em todo endpoint novo ou alterado: papel, dono do recurso e, onde o produto tem empresas (Omni), isolamento entre elas.
 - [ ] Nenhum segredo, token, senha ou arquivo `.env` no diff.
-- [ ] Migração reversível e testada do zero.
+- [ ] Migração reversível, provada no ciclo upgrade → downgrade → upgrade.
 - [ ] Logs sem dado pessoal.
 - [ ] Documentação atualizada: README, `.env.example`, CHANGELOG e ADR, se houve decisão de arquitetura.
 - [ ] Branch atualizada com a principal e sem conflito.
